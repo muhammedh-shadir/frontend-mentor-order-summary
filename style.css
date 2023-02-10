@@ -1,0 +1,162 @@
+:root {
+    --clr-primary-900: hsl(245, 75%, 52%);
+    --clr-secondary-400: hsl(225, 100%, 94%);
+
+    --clr-neutral-900: hsl(223, 47%, 23%);
+    --clr-neutral-400: hsl(224, 23%, 55%);
+    --clr-neutral-200: hsl(225, 100%, 98%);
+
+    --ff-base: 'Red Hat Display', sans-serif;
+
+    --fw-bold: 900;
+    --fw-bolder: 700;
+    --fw-regular: 500;
+
+
+}
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  /*
+    2. Remove default margin
+  */
+  * {
+    margin: 0;
+  }
+  /*
+    3. Allow percentage-based heights in the application
+  */
+  html, body {
+    height: 100%;
+  }
+  /*
+    Typographic tweaks!
+    4. Add accessible line-height
+    5. Improve text rendering
+  */
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  /*
+    6. Improve media defaults
+  */
+  img, picture, video, canvas, svg, button {
+    display: block;
+    max-width: 100%;
+  }
+  /*
+    7. Remove built-in form typography styles
+  */
+  input, button, textarea, select {
+    font: inherit;
+  }
+  /*
+    8. Avoid text overflows
+  */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+
+  /* general styles */
+
+  body {
+    font-family: var(--ff-base);
+    font-weight: var(--fw-regular);
+    background-color: var(--clr-secondary-400);
+    display: grid;
+    place-content: center;
+    margin: 1em;
+  }
+
+  /* utilities */
+  .flex-group {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 2em;
+  }
+
+  .change-link {
+    font-size: .925rem;
+    color: var(--clr-primary-900);
+    font-weight: var(--fw-bolder);
+  }
+
+  .button {
+    padding: .75em 1em;
+    border: 0;
+    border-radius: .5em;
+    margin-bottom: 1em;
+    width: 100%;
+    font-weight: var(--fw-bolder);
+    font-size: 1rem;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .button.primary {
+    background-color: var(--clr-primary-900);
+    color: var(--clr-neutral-200);
+  }
+
+  .button.primary:is(:hover, :focus) {
+    background-color: var(--clr-neutral-400);
+  }
+
+  .button.secondary {
+    background-color: var(--clr-neutral-200);
+    color: var(--clr-neutral-400);
+  }
+
+  .button.secondary:is(:hover, :focus) {
+    color: var(--clr-neutral-900);
+  }
+
+  /* card styles */
+  .card {
+    background-color: var(--clr-neutral-200);
+    border-radius: 1.5em;
+    overflow: hidden;
+    text-align: center;
+    --content-padding: 1em;
+    --content-margin: 1em;
+    max-width: 375px;
+  }
+
+  @media (min-width: 768px) {
+    .card {
+      --content-padding: 1.912em;
+    }
+  }
+  .card__content {
+    padding: var(--content-padding);
+  }
+  .card__img {
+    margin-bottom: calc(var(--content-margin) + 1em);
+  }
+
+  .card__title {
+    font-size: 1.5rem;
+    font-weight: var(--fw-bold);
+    margin-bottom: calc(var(--content-margin) - .25em);
+  }
+
+  .card__description {
+    color: var(--clr-neutral-400);
+    padding-inline: calc(var(--content-padding) + .5em);
+    margin-bottom: calc(var(--content-margin) + 1em);
+  }
+
+  .card__price-category {
+    font-size: 1rem;
+    font-weight: var(--fw-bolder);
+  }
+
+  .card__price {
+    color: var(--clr-neutral-400);
+  }
+
